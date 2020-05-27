@@ -112,6 +112,32 @@ def mergeSort(array):
            j=j+1
            k=k+1
 
+##########################################################  Binary Search
+def binarySearch (arr,x): 
+  first = 0;
+  last = len(arr)-1
+  while(first <= last):
+    middle = math.floor((first+last)/2)
+    if arr[middle] == x:
+      return(middle)
+    elif arr[middle] > x:
+      last = middle -1
+    else:
+      first = middle +1
+  return("Not found!")
+
+def binSeaRec(arr,first,last,x):               # Binary Search Recursion
+  if first <= last:
+    middle = math.floor((first+last)/2)
+    if(arr[middle] == x):
+      return(middle)
+    elif(arr[middle] > x):
+      return binSeaRec(arr,first,middle-1,x)
+    else:
+      return binSeaRec(arr,middle+1,last, x)
+  else:
+    return("not found!")
+
 
 
 #appending numbers.txt numbers into A[] array to sort them
