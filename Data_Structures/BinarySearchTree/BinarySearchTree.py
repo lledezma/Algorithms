@@ -92,3 +92,39 @@ class Node:
         print("")
         if self.right:
             self.right.print_tree()
+
+########################################### Depth-first Search
+    def DFS_PreOrder(self):
+        print(self.data)
+        if self.left:
+            self.left.DFS_PreOrder()
+        if self.right:
+            self.right.DFS_PreOrder()
+
+    def DFS_InOrder(self):
+        if self.left:
+            self.left.DFS_InOrder()
+        print(self.data)
+        if self.right:
+            self.right.DFS_InOrder()
+
+    def DFS_PosOrder(self):
+        if self.left:
+            self.left.DFS_PosOrder()
+        if self.right:
+            self.right.DFS_PosOrder()
+        print(self.data)
+########################################### Breadth-first Search
+    def BFS(self,root):
+        if root.data == None:
+            print("Tree is empty")
+        queue = []
+        queue.append(root)
+        while(queue):
+            node = queue.pop(0)
+            print(node.data)
+            if(node.left is not None):
+                queue.append(node.left)
+            if(node.right is not None):
+                queue.append(node.right)
+        return

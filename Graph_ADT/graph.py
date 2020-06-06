@@ -2,6 +2,8 @@ class Graph:
     def __init__(self):
         self.vert_dict = {}
         self.num_vertices = 0
+        self.visited = {}
+        self.depth_result = []
 
     def isDirect(self):
         adjan = []
@@ -215,3 +217,45 @@ class Graph:
             for x in self.vert_dict[y]:
                 for z in self.vert_dict[y][x]:
                     print(y,x,z)
+##########################################################  Depth-first search 
+
+    def DFS(self):
+        for x in self.vert_dict:
+            self.visited[x] = []
+            self.visited[x].append("x") #not visited
+            self.visited[x].append(0)
+        time = 0
+        for x in self.vert_dict:
+            if self.visited[x][0] == "x":
+                self.DFS_Visit(x)
+        # print(self.visited)
+
+    def DFS_Visit(self,u):
+        self.visited[u][0] = "o"     #visited
+        self.visited[u][1] +=1
+
+        self.depth_result.append(u)
+        # print(self.depth_result)
+        print(u, end = " ")
+
+        for x in self.vert_dict[u]:
+            if self.visited[x][0] == "x":
+                self.DFS_Visit(x)
+
+########################################################## 
+    def BFS(self,x):
+        for y in self.vert_dict:
+            self.visited[y] = []
+            self.visited[y].append("x") #not visited
+
+        queue = []
+        queue.append(x)
+        self.visited[x][0] = "o"
+
+        while queue:
+            x = queue.pop(0)
+            print(x, end = " ")
+            for i in self.vert_dict[x]:
+                if self.visited[i][0] == "x":
+                    queue.append(i)
+                    self.visited[i][0] = "o"
