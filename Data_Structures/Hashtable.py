@@ -1,7 +1,7 @@
 class Node:
     def __init__(self, data, name):
         self.key = data
-        self.Name = name
+        self.name = name
         self.link = None
 
 
@@ -20,17 +20,17 @@ class hashTable:
     def add(self, data, name):
         hash_key = self.hashing_funct(data)
         key_exists = True
-        elementList = self.table[hash_key]
-        n = elementList.link
-        if n == None:
+        n = self.table[hash_key]
+        if n.link is None:
             new_node = Node(data,name)
             new_node.link = None
-            n = new_node
+            n.link = new_node
         else:
+            n = n.link
             while(key_exists):
                 if n.key == data:
-                    return("key already exists ")
-                elif n.link == None:
+                    return("key already exists")
+                elif n.link is None:
                     new_node = Node(data,name)
                     new_node.link = None
                     n.link = new_node
@@ -69,14 +69,8 @@ class hashTable:
         while(elementList.link is not None):
             elementList = elementList.link
             if (elementList.key == data):
-                return elementList.Name
+                return elementList.name
         return("Element " + str(data) +  " doesnt exist")
 
 
 newlist = hashTable()
-
-
-
-
-
-
