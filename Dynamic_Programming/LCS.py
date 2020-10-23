@@ -1,4 +1,4 @@
-	# Longest Common Sequence Algorithm
+	# Longest Common Subsequence Algorithm
 def LCS_Length(X,Y):
 	m = len(X)		#rows
 	n = len(Y)		#columns
