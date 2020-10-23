@@ -26,13 +26,13 @@ def LCS_Length(X,Y):
 def PRINT_LCS(b, X, i, j):
 	if j == 0 or i == 0:
 		if b[i][j] == "↖":
-			print(X[i])
+			print(X[i],end='')
 			return 
 		else:
 			return
 	if b[i][j] == "↖":
 		PRINT_LCS(b,X,i-1,j-1)
-		print(X[i])
+		print(X[i],end='')
 	elif b[i][j] == "↑":
 		PRINT_LCS(b,X,i-1,j)
 	else:
@@ -49,9 +49,8 @@ columns = len(Y)
 b,c = LCS_Length(X,Y)
 PRINT_LCS(b,X,rows-1,columns-1)
 
+print()
 for i in range(rows):
 	print(b[i])
 for j in range(rows):
 	print(c[j])
-
-
