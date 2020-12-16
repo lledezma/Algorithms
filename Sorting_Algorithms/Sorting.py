@@ -1,5 +1,12 @@
 import time
 import math
+##########################################################  Blubble Sort  *O(n^2 )
+def bubbleSort(arr):
+    n = len(arr)
+    for i in range(n-1):
+      for j in range(0, n-i-1):
+        if arr[j] > arr[j+1]:
+          arr[j], arr[j+1] = arr[j+1], arr[j]
 ##########################################################  Quicksort
 def quicksort(A,p,r):
     if p < r:
