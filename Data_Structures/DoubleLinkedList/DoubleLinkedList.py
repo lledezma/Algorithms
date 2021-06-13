@@ -5,11 +5,11 @@ class Node:
         self.previous = None
 
 
-class DoublyLinkedList:
+class DoubleLinkedList:
     def __init__(self):
         self.start_node = None
 
-    def Search(self, value):
+    def search(self, value):
         current = self.start_node
         while current:
             if current.item == value:
@@ -20,7 +20,7 @@ class DoublyLinkedList:
         print("record not in the list")
         return False
 
-    def AppendHead(self, data):
+    def append_head(self, data):
         if self.start_node is None:
             new_node = Node(data)
             self.start_node = new_node
@@ -31,7 +31,7 @@ class DoublyLinkedList:
         self.start_node.previous = new_node
         self.start_node = new_node
 
-    def AppendTail(self, data):
+    def append_tail(self, data):
         if self.start_node is None:
             new_node = Node(data)
             self.start_node = new_node
@@ -43,7 +43,7 @@ class DoublyLinkedList:
         n.next = new_node
         new_node.previous = n
 
-    def RemoveHead(self):
+    def remove_head(self):
         if self.start_node is None:
             print("There are no elements to delete")
             return
@@ -53,7 +53,7 @@ class DoublyLinkedList:
         self.start_node = self.start_node.next
         self.start_prev = None
 
-    def RemoveEnd(self):
+    def remove_end(self):
         if self.start_node is None:
             print("The list is empty")
             return
@@ -65,7 +65,7 @@ class DoublyLinkedList:
             n = n.next
         n.previous.next = None
 
-    def Delete(self, x):
+    def delete(self, x):
         if self.start_node is None:
             print("The list is empty")
             return
@@ -95,7 +95,7 @@ class DoublyLinkedList:
             else:
                 print("Element not found")
 
-    def PrintList(self):
+    def print_list(self):
         if self.start_node is None:
             print("List is empty")
             return

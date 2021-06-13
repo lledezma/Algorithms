@@ -27,7 +27,7 @@ class Node:
         else:
             self.data = data
 
-    def Search(self, data, parent=None):
+    def search(self, data, parent=None):
         if data < self.data:
             if self.left is None:
                 print("No record found")
@@ -94,21 +94,21 @@ class Node:
             self.right.print_tree()
 
 ########################################### Depth-first Search
-    def DFS_PreOrder(self):
+    def dfs_preorder(self):
         print(self.data)
         if self.left:
             self.left.DFS_PreOrder()
         if self.right:
             self.right.DFS_PreOrder()
 
-    def DFS_InOrder(self):
+    def dfs_in_order(self):
         if self.left:
             self.left.DFS_InOrder()
         print(self.data)
         if self.right:
             self.right.DFS_InOrder()
 
-    def DFS_PosOrder(self):
+    def dfs_posorder(self):
         if self.left:
             self.left.DFS_PosOrder()
         if self.right:

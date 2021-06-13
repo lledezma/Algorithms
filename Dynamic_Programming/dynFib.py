@@ -1,4 +1,4 @@
-def dynFib(n):			#Dynamic fibonacci algorithm
+def dynamic_fib(n):			#Dynamic fibonacci algorithm
 	if n == 0 or n == 1 :
 		return n
 	else:
@@ -12,7 +12,7 @@ def dynFib(n):			#Dynamic fibonacci algorithm
 	return arr[1]
 
 
-def fib(n):			#recursion fibonacci number 
+def recursion_fib(n):			#recursion fibonacci number 
 	if n == 0 or n == 1:
 		return n
 	else:

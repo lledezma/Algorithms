@@ -1,6 +1,6 @@
 import math
 		#Scheduling competing activites 
-def Activity_Selection(activities,k):
+def activity_selection(activities,k):
 	n = len(activities)
 	A = {}
 	A[k] = activities[k]
@@ -14,4 +14,4 @@ def Activity_Selection(activities,k):
 activities = {1:[1,4], 2:[3,5], 3:[0,6], 4:[5,7], 5:[3,9], 6:[5,9], 7:[6,10], 8:[8,11], 
 	9:[8,12], 10:[2,14], 11:[12,16]}
 
-Activity_Selection(activities,4)
+activity_selection(activities,4)

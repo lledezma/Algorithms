@@ -1,5 +1,5 @@
 	# Longest Common Subsequence Algorithm
-def LCS_Length(X,Y):
+def lcs_length(X,Y):
 	m = len(X)		#rows
 	n = len(Y)		#columns
 	b = [[0 for i in range(n)] for j in range(m)] 
@@ -23,7 +23,7 @@ def LCS_Length(X,Y):
 	return b, c
 
 
-def PRINT_LCS(b, X, i, j):
+def print_lcs(b, X, i, j):
 	if j == 0 or i == 0:
 		if b[i][j] == "↖":
 			print(X[i],end='')
@@ -46,8 +46,8 @@ Y = "BDCABA"
 rows = len(X)
 columns = len(Y)
 
-b,c = LCS_Length(X,Y)
-PRINT_LCS(b,X,rows-1,columns-1)
+b,c = lcs_length(X,Y)
+print_lcs(b,X,rows-1,columns-1)
 
 print()
 for i in range(rows):

@@ -5,7 +5,7 @@ class Node:
         self.link = None
 
 
-class hashTable:
+class HashTable:
     def __init__(self):
         self.tableSize = 10;
         self.table = [0 for _ in range(0,self.tableSize)]
@@ -13,7 +13,7 @@ class hashTable:
             self.table[i] = Node(i,"")
             self.table[i].link = None
         
-    def hashing_funct(self,data):
+    def hashing_func(self,data):
         hashed_node = data % self.tableSize
         return hashed_node
 

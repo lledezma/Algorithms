@@ -5,7 +5,7 @@ class Graph:
         self.visited = {}
         self.depth_result = []
 
-    def isDirect(self):
+    def is_direct(self):
         adjan = []
         wgt = []
         vertic = []
@@ -47,14 +47,14 @@ class Graph:
 
 
 
-    def addVertex(self, node):
+    def add_vertex(self, node):
         if node not in self.vert_dict:
             self.num_vertices = self.num_vertices + 1
             self.vert_dict[node] = {}
         else:
             print('error')
 
-    def removeVertex(self,v):
+    def remove_vertex(self,v):
         if(v in self.vert_dict):
             temp = []
             for x in self.vert_dict:
@@ -68,7 +68,7 @@ class Graph:
             print(v, 'vertex not in the graph')
 
 
-    def addEdge_W(self, frm, to, weight):
+    def add_edge_with_weight(self, frm, to, weight):
         if frm not in self.vert_dict:
             self.addVertex(frm)
         if to not in self.vert_dict:
@@ -87,7 +87,7 @@ class Graph:
 
 
 
-    def addEdge(self, frm, to):
+    def add_edge(self, frm, to):
         if frm not in self.vert_dict:
             self.addVertex(frm)
         if to not in self.vert_dict:
@@ -103,7 +103,7 @@ class Graph:
         self.vert_dict[frm][to].append('')
 
 
-    def removeEdge(self,v,u):
+    def remove_edge(self,v,u):
         if(v in self.vert_dict) or (u in self.vert_dict):
             try:
                 if(u not in self.vert_dict[v] and v not in self.vert_dict[u]):
@@ -118,7 +118,7 @@ class Graph:
             print("no edge between vertices:", v, 'and', u)
 
 
-    def getWeight(self,v,u):
+    def get_weight(self,v,u):
         if v in self.vert_dict:
             if u in self.vert_dict[v]:
                 if self.vert_dict[v][u][0] == '':
@@ -130,7 +130,7 @@ class Graph:
         else:
             print("no edge from", v, 'to', u)
 
-    def setWeight(self,v,u,w):
+    def set_weight(self,v,u,w):
         if v in self.vert_dict:
             if u in self.vert_dict[v]:
                 self.vert_dict[v][u][0] = w
@@ -140,14 +140,14 @@ class Graph:
             print(v, 'not in graph')
 
 
-    def isEmpty(self):
+    def is_empty(self):
         if len(self.vert_dict) == 0:
             print("The graph is empty")
         else:
             print("The graph not empty")
 
 
-    def isComplete(self):
+    def is_complete(self):
         n = len(self.vert_dict)
         calculation = (n*(n-1))/2
         if self.nEdges() < calculation:
@@ -186,7 +186,7 @@ class Graph:
     def size(self):
         return self.num_vertices
 
-    def nEdges(self):
+    def n_edges(self):
         count = 0
         for y in self.vert_dict:
             for x in self.vert_dict[y]:
@@ -196,7 +196,7 @@ class Graph:
     def clear(self):
         self.vert_dict = {}
 
-    def vertexExists(self,v):
+    def vertex_exists(self,v):
         if v in self.vert_dict:
             print('True')
         else:
@@ -208,7 +208,7 @@ class Graph:
                 for z in self.vert_dict[y][x]:
                     print(y, '-->',x, 'weight:', z )
 
-    def printSampleGraph(self):
+    def print_sample_graph(self):
         print(self.num_vertices)
         for x in self.vert_dict:
             print(x, end=' ')
@@ -219,7 +219,7 @@ class Graph:
                     print(y,x,z)
 ##########################################################  Depth-first search 
 
-    def DFS(self):
+    def dfs(self):
         for x in self.vert_dict:
             self.visited[x] = []
             self.visited[x].append("x") #not visited
@@ -230,7 +230,7 @@ class Graph:
                 self.DFS_Visit(x)
         # print(self.visited)
 
-    def DFS_Visit(self,u):
+    def dfs_visit(self,u):
         self.visited[u][0] = "o"     #visited
         self.visited[u][1] +=1
 
@@ -243,7 +243,7 @@ class Graph:
                 self.DFS_Visit(x)
 
 ########################################################## 
-    def BFS(self,x):
+    def dfs(self,x):
         for y in self.vert_dict:
             self.visited[y] = []
             self.visited[y].append("x") #not visited

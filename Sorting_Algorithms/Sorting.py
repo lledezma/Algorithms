@@ -1,14 +1,14 @@
 import time
 import math
 ##########################################################  Blubble Sort  *O(n^2 )
-def bubbleSort(arr):
+def bubble_sort(arr):
     n = len(arr)
     for i in range(n-1):
       for j in range(0, n-i-1):
         if arr[j] > arr[j+1]:
           arr[j], arr[j+1] = arr[j+1], arr[j]
 ##########################################################  Quicksort
-def quicksort(A,p,r):
+def quick_sort(A,p,r):
     if p < r:
        q = partition(A, p, r)
        quicksort(A,p,q-1)
@@ -32,7 +32,7 @@ def partition(A, p, r):
 
 
 ##########################################################  Counting Sort
-def countingsort(array1, max_val):
+def counting_sort(array1, max_val):
     m = max_val + 1
     count = [0] * m
     for a in array1:
@@ -44,7 +44,7 @@ def countingsort(array1, max_val):
             i += 1
 
 ##########################################################  insertion sort
-def insertionSort(arr):
+def insertion_sort(arr):
     for i in range(1, len(arr)):
         key = arr[i]
         j = i-1
@@ -54,7 +54,7 @@ def insertionSort(arr):
         arr[j+1] = key
 
 ##########################################################  seletion sort
-def selectionsort(A):
+def selection_sort(A):
     for i in range(len(A)):
         min_idx = i
         for j in range(i+1, len(A)):
@@ -65,7 +65,7 @@ def selectionsort(A):
 
 
 ##########################################################  HeapSort
-def heapSort(arr):
+def heap_sort(arr):
     n = len(arr)
     # Build a maxheap.
     for i in range(n, -1, -1):
@@ -89,7 +89,7 @@ def heapify(arr, n, i):
         heapify(arr, n, largest)
 
 ##########################################################  MergeSort
-def mergeSort(array):
+def merge_sort(array):
    if len(array)>1:
        middle = len(array)//2
        lefthalf = array[:middle]
@@ -121,7 +121,7 @@ def mergeSort(array):
            k=k+1
 
 ##########################################################  Binary Search
-def binarySearch (arr,x): 
+def binary_search (arr,x): 
   first = 0;
   last = len(arr)-1
   while(first <= last):
@@ -134,7 +134,7 @@ def binarySearch (arr,x):
       first = middle +1
   return("Not found!")
 
-def binSeaRec(arr,first,last,x):               # Binary Search Recursion
+def binary_search_recursion(arr,first,last,x):               # Binary Search Recursion
   if first <= last:
     middle = math.floor((first+last)/2)
     if(arr[middle] == x):

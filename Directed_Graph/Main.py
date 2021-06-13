@@ -31,18 +31,18 @@ for x in templine:
 
 # The above part takes care of reading the file /////////////////////////////////
 
-g.removeVertex('h')
-g.isComplete()
+g.remove_vertex('h')
+g.is_complete()
 print('number of edges in the graph:',g.nEdges())
 print(g.adjacent('a','f'))
-g.getWeight('b','h')
+g.get_weight('b','h')
 g.degree('c')
 print('number of vertices in the graph:',g.size())
 
-g.addVertex('k')
-g.addEdge_W('k','a',5)
-g.addEdge_W('g','k',2)
-g.setWeight('a','c',7)
+g.add_vertex('k')
+g.add_edge_with_weight('k','a',5)
+g.add_edge_with_weight('g','k',2)
+g.set_weight('a','c',7)
 print('')
 
-g.printSampleGraph()
+g.print_sample_graph()
