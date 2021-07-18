@@ -31,12 +31,12 @@ def print_lcs(b, X, i, j):
 		else:
 			return
 	if b[i][j] == "↖":
-		PRINT_LCS(b,X,i-1,j-1)
+		print_lcs(b,X,i-1,j-1)
 		print(X[i],end='')
 	elif b[i][j] == "↑":
-		PRINT_LCS(b,X,i-1,j)
+		print_lcs(b,X,i-1,j)
 	else:
-		PRINT_LCS(b,X,i,j-1)
+		print_lcs(b,X,i,j-1)
 
 
 
