@@ -125,7 +125,7 @@ def binary_search (arr,x):
   first = 0;
   last = len(arr)-1
   while(first <= last):
-    middle = math.floor((first+last)/2)
+    middle = (first+last)/2
     if arr[middle] == x:
       return(middle)
     elif arr[middle] > x:
@@ -136,7 +136,7 @@ def binary_search (arr,x):
 
 def binary_search_recursion(arr,first,last,x):               # Binary Search Recursion
   if first <= last:
-    middle = math.floor((first+last)/2)
+    middle = (first+last)/2
     if(arr[middle] == x):
       return(middle)
     elif(arr[middle] > x):
