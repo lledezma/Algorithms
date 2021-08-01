@@ -1,6 +1,6 @@
 import time
 import math
-##########################################################  Blubble Sort  *O(n^2 )
+##########################################################  Blubble Sort  
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n-1):
