@@ -9,7 +9,7 @@ def dyn_fib(n):				#Dynamic fibonacci algorithm
 			arr[i] = arr[i-1]+arr[i-2]
 	return arr[n-1]
 
-def dynamic_fib(n):			#Dynamic fibonacci algorithm (Memory Efficient/Space Optimized)
+def dynamic_fib(n):			#Dynamic fibonacci algorithm (Space Optimized)
 	if n == 0 or n == 1:
 		return n
 	else:
@@ -21,7 +21,7 @@ def dynamic_fib(n):			#Dynamic fibonacci algorithm (Memory Efficient/Space Optim
 	return arr[1]
 
 
-def recursion_fib(n):			#Recursion fibonacci number 
+def recursion_fib(n):		#Recursion fibonacci number 
 	if n == 0 or n == 1:
 		return n
 	else:
