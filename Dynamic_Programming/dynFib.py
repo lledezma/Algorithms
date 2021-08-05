@@ -21,7 +21,7 @@ def dynamic_fib(n):			#Dynamic fibonacci algorithm (Space Optimized)
 	return arr[1]
 
 
-def recursion_fib(n):		#Recursion fibonacci number 
+def fib(n):		#Recursion fibonacci number 
 	if n == 0 or n == 1:
 		return n
 	else:
@@ -29,5 +29,5 @@ def recursion_fib(n):		#Recursion fibonacci number
 
 
 print(dynamic_fib(10))
-print(recursion_fib(10))
+print(fib(10))
 print(dyn_fib(10))
