@@ -28,6 +28,6 @@ def fib(n):		#Recursion fibonacci number
 		return fib(n-1) + fib(n-2)
 
 
+print(dyn_fib(10))
 print(dynamic_fib(10))
 print(fib(10))
-print(dyn_fib(10))
