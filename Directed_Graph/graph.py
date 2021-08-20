@@ -45,8 +45,6 @@ class Graph:
         except:
             print('vertix:', v, 'not in the graph')
 
-
-
     def add_vertex(self, node):
         if node not in self.vert_dict:
             self.num_vertices = self.num_vertices + 1
@@ -85,8 +83,6 @@ class Graph:
 
         self.vert_dict[frm][to].append(weight)
 
-
-
     def add_edge(self, frm, to):
         if frm not in self.vert_dict:
             self.addVertex(frm)
@@ -102,7 +98,6 @@ class Graph:
             return
         self.vert_dict[frm][to].append('')
 
-
     def remove_edge(self,v,u):
         if(v in self.vert_dict) or (u in self.vert_dict):
             try:
@@ -116,7 +111,6 @@ class Graph:
                 print("no edge between vertices:", v, 'and', u)
         else:
             print("no edge between vertices:", v, 'and', u)
-
 
     def get_weight(self,v,u):
         if v in self.vert_dict:
@@ -139,13 +133,11 @@ class Graph:
         else:
             print(v, 'not in graph')
 
-
     def is_empty(self):
         if len(self.vert_dict) == 0:
             print("The graph is empty")
         else:
             print("The graph not empty")
-
 
     def is_complete(self):
         n = len(self.vert_dict)
@@ -155,13 +147,11 @@ class Graph:
         else:
             print("the graph is complete")
 
-
     def vertices(self):
         temp = []
         for i in self.vert_dict:
            temp.append(i)
         print(temp)
-
 
     def edges(self):
         for y in self.vert_dict:
