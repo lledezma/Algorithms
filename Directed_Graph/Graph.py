@@ -68,9 +68,9 @@ class Graph:
 
     def add_edge_with_weight(self, frm, to, weight):
         if frm not in self.vert_dict:
-            self.addVertex(frm)
+            self.add_vertex(frm)
         if to not in self.vert_dict:
-            self.addVertex(to)
+            self.add_vertex(to)
         if(to in self.vert_dict[frm]):
             print("multiple edges not allowed")
             return
@@ -85,9 +85,9 @@ class Graph:
 
     def add_edge(self, frm, to):
         if frm not in self.vert_dict:
-            self.addVertex(frm)
+            self.add_vertex(frm)
         if to not in self.vert_dict:
-            self.addVertex(to)
+            self.add_vertex(to)
         if(to in self.vert_dict[frm]):
             print("multiple edges not allowed")
             return
@@ -142,7 +142,7 @@ class Graph:
     def is_complete(self):
         n = len(self.vert_dict)
         calculation = (n*(n-1))/2
-        if self.nEdges() < calculation:
+        if self.n_edges() < calculation:
             print("the graph is not complete")
         else:
             print("the graph is complete")

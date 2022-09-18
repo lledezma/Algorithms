@@ -1,4 +1,4 @@
-from NormalGraph import *
+from Graph import *
 
 file = open('SampleGraph.txt', 'r')
 lines = file.readlines()
@@ -8,32 +8,32 @@ templine = []
 for x in lines:
     templine.append(x.replace('\n', ''))
 
-g = Graph(6,True)
+g = Graph()
 
 for x in templine[1]:
     if x == ' ':
         pass
     else:
-        g.addVertex(x)
+        g.add_vertex(x)
 templine.pop(0)
 templine.pop(0)
 
 for x in templine:
     try:
         number = x[4]+x[5]
-        g.addEdge_W(x[0],x[2],int(number))
+        g.add_edge_with_weight(x[0],x[2],int(number))
     except:
         try:
-            g.addEdge_W(x[0],x[2],int(x[4]))
+            g.add_edge_with_weight(x[0],x[2],int(x[4]))
         except:
-            g.addEdge(x[0],x[2])
+            g.add_edge(x[0],x[2])
 
 
 # The above part takes care of reading the file /////////////////////////////////
 
 g.remove_vertex('h')
 g.is_complete()
-print('number of edges in the graph:',g.nEdges())
+print('number of edges in the graph:',g.n_edges())
 print(g.adjacent('a','f'))
 g.get_weight('b','h')
 g.degree('c')
