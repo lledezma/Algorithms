@@ -6,9 +6,7 @@ class Graph:
         self.depth_result = []
 
     def is_direct(self):
-        adjan = []
-        wgt = []
-        vertic = []
+        adjan,wgt,vertic = [], [], []
         for y in self.vert_dict:
             if (len(vertic) == 1):
                 pass
